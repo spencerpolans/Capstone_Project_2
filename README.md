@@ -1,0 +1,26 @@
+Project Overview:
+This project’s goal is to help a real estate firm in New York City accurately estimate residential housing prices with the help of machine learning. The model uses property characteristics (size, age, building class, etc.) and location data to attempt to predict Sales Price. The primary business goal is to assist agents in setting competitive, data-driven, listing prices that will help reduce listing time on the market and improve the seller’s ROI.
+
+BLUF:
+The final model is a tuned XGBoost Regressor, trained on a dataset of over 20,000 cleaned NYC residential sales. After extensive feature engineering and external data enrichment, the model achieved:
+
+R²: 0.594
+
+MAE: $128,750
+
+RMSE: $186,000
+
+% of predictions within ±10% of actual price: 34.5%
+
+Despite a wide range of geographic and economic features (Walk Score, crime proximity, distance to subway and Midtown), model performance plateaued near 60% R-squared. This suggests we are limited by the available data.
+
+Data Usage Guide:
+nyc-rolling-sales.csv: the raw data pulled from Kaggle. This is the core dataset before cleaning
+cleaned_nyc_sales_with_walkscore.csv: This dataset incorporated walkscore and cleaned the iniital dataset
+pluto_25v1_1.csv: Too large to upload to github. This is used to extract precise lat/lon
+https://data.cityofnewyork.us/City-Government/Primary-Land-Use-Tax-Lot-Output-PLUTO-/64uk-42ks/about_data?utm_source=chatgpt.com (too large to upload to github)
+Parks_Properties_20250616.csv: Sorted by zip code to calculate local park acerage
+MTA_Subway_Entrances_and_Exits_2024.csv: this is used to compute proximity of properties to subways. *NOTE* this is from 2024 and our dataset is from 2016-17, so it may be slightly off.
+NYPD_Complaint_Data_Historic_20250613.csv: Filtered by 2015-2016 crime to try to use crime as an indicator for sales price
+https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/about_data (too large to upload to github. FILTER before downloading)
+NYC_Household_Median_Income.csv: Used to see if median income by zip can be a predictor of sales price.
