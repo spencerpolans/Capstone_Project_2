@@ -17,7 +17,7 @@ Despite a wide range of geographic and economic features (Walk Score, crime prox
 Data Usage Guide:
 nyc-rolling-sales.csv: the raw data pulled from Kaggle. This is the core dataset before cleaning
 cleaned_nyc_sales_with_walkscore.csv: This dataset incorporated walkscore and cleaned the iniital dataset
-pluto_25v1_1.csv: Too large to upload to github. This is use dto extract precise lat/lon
+pluto_25v1_1.csv: Too large to upload to github. This is used to extract precise lat/lon
 https://data.cityofnewyork.us/City-Government/Primary-Land-Use-Tax-Lot-Output-PLUTO-/64uk-42ks/about_data?utm_source=chatgpt.com (too large to upload to github)
 Parks_Properties_20250616.csv: Sorted by zip code to calculate local park acerage
 MTA_Subway_Entrances_and_Exits_2024.csv: this is used to compute proximity of properties to subways. *NOTE* this is from 2024 and our dataset is from 2016-17, so it may be slightly off.
